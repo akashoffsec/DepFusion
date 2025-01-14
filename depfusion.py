@@ -64,7 +64,10 @@ def parse_dependencies(file_path):
         with open(file_path, "r") as file:
             if file_path.endswith("package.json") or file_path.endswith("package-lock.json"):
                 data = json.load(file)
-                dependencies = data.get("dependencies", {}).keys()
+                dependencies = set(data.get("dependencies", {}).keys()) | \
+               set(data.get("devDependencies", {}).keys()) | \
+               set(data.get("resolutions", {}).keys()) | \
+               set(data.get("peerDependencies", {}).keys())
                 registry = "npm"
             elif file_path.endswith("requirements.txt") or file_path.endswith("Pipfile") or file_path.endswith("Pipfile.lock"):
                 dependencies = [line.strip().split("==")[0] for line in file if line.strip() and not line.startswith("#")]
