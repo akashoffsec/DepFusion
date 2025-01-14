@@ -19,17 +19,17 @@ Use the following commands based on your scan requirements:
 
 #### Analyze a single file:
 
-`python3 depFusion.py -f <path_to_file>`
+`python3 depfusion.py -f <path_to_file>`
 
 #### Analyze a directory:
 
-`python3 depFusion.py -d <path_to_directory>`
+`python3 depfusion.py -d <path_to_directory>`
 
 #### Analyze an entire repository recursively:
 
-`python3 depFusion.py -R <path_to_repository>`
+`python3 depfusion.py -R <path_to_repository>`
 
 #### Save results to an output file:
 
-`python3 depFusion.py -R <path_to_repository> -o results.json`
+`python3 depfusion.py -R <path_to_repository> -o results.json`
 
